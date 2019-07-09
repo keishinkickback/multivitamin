@@ -11,7 +11,7 @@ DECIMAL_SIGFIG = 3
 
 
 class AbstractMediaRetriever(FileRetriever, ABC):
-    """A fileretriever for visual media."""
+    """A fileretriever for visual/text media."""
 
     def __init__(self, url=None):
         """Init MediaRetriever.
@@ -57,6 +57,14 @@ class AbstractMediaRetriever(FileRetriever, ABC):
     def is_image(self):
         """Check if url is an image."""
         pass
+
+    # TODO: remove?
+    @property
+    @abstractmethod
+    def is_text(self):
+        """Check if url is an image."""
+        pass
+
 
     @property
     def video_capture(self):
